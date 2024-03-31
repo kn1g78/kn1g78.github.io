@@ -27,6 +27,38 @@
         .tombstone p {
             margin: 50px 0;
         }
+        /* 在之前的样式后面添加 */
+
+@keyframes champagneOpen {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.champagne-bottle {
+    width: 100px;
+    height: 200px;
+    background-color: gold;
+    border-radius: 10px;
+    position: relative;
+    margin: 20px auto;
+    animation: none; /* 初始状态没有动画 */
+}
+
+.champagne-cork {
+    width: 30px;
+    height: 30px;
+    background-color: brown;
+    border-radius: 50%;
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.champagne-pop {
+    animation: champagneOpen 1s ease-out forwards; /* 应用动画 */
+}
     </style>
 </head>
 <body background="white">
@@ -37,6 +69,29 @@
         <p>暂时性逝于2024年3月</p>
         <p>永垂不朽</p>
     </div>
+    <button id="openChampagneBtn">开香槟</button>
+    <div class="champagne-bottle">
+        <div class="champagne-cork"></div>
+    </div>
+
+    <script>
+        // 获取按钮和香槟瓶元素
+        const openChampagneBtn = document.getElementById('openChampagneBtn');
+        const champagneBottle = document.querySelector('.champagne-bottle');
+
+        // 为按钮添加点击事件监听器
+        openChampagneBtn.addEventListener('click', function() {
+            // 检查香槟瓶是否已经弹出过，如果没有则添加弹出动画的类名
+            if (!champagneBottle.classList.contains('champagne-pop')) {
+                champagneBottle.classList.add('champagne-pop');
+
+                // 可以在这里添加音效或其他效果
+                // 例如：播放开香槟的音效文件
+                // const audio = new Audio('champagne_pop.mp3');
+                // audio.play();
+            }
+        });
+    </script>  
 </center>
 </body>
 </html>
