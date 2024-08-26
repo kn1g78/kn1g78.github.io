@@ -1,5 +1,5 @@
 {
-    "version":"1.0",
+    "version":"2.0",
     "ALYac": {
         "processes": [
             "aylaunch.exe",
@@ -1590,7 +1590,6 @@
             "avgrsx.exe",
             "avgserv.exe",
             "avgserv9.exe",
-            "avgw.exe",
             "avkpop.exe",
             "avkserv.exe",
             "avkservice.exe",
